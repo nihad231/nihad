@@ -1,0 +1,116 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লেনদেন ফর্ম</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #transaction-details, #other-person-name {
+            display: none;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function toggleTransactionDetails() {
+            const paymentStatus = document.getElementById('payment-status').value;
+            const transactionDetails = document.getElementById('transaction-details');
+            transactionDetails.style.display = paymentStatus === 'Yes' ? 'block' : 'none';
+        }
+
+        function togglePersonNameInput() {
+            const person = document.getElementById('person-paid').value;
+            const otherPersonName = document.getElementById('other-person-name');
+            otherPersonName.style.display = person === 'Other' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <h1>পুনর্মিলনী ২০২৫ (SSC Batch 24) রেকর্ড, জাটিয়া উচ্চ বিদ্যালয়</h1>
+
+    <form action="#" method="post">
+        <label for="name">নাম:</label>
+        <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন" required>
+
+        <label for="gender">লিঙ্গ নির্বাচন করুন:</label>
+        <select id="gender" name="gender" required>
+            <option value="">নির্বাচন করুন</option>
+            <option value="Male">পুরুষ</option>
+            <option value="Female">নারী</option>
+            <option value="Other">অন্যান্য</option>
+        </select>
+
+
+        <label for="roll">রোল নম্বর:</label>
+        <input type="number" id="roll" name="roll" placeholder="আপনার রোল নম্বর লিখুন" required>
+
+        <label for="payment-status">আপনি কি taka পরিশোধ করেছেন? (Yes বা No)</label>
+        <select id="payment-status" name="payment-status" onchange="toggleTransactionDetails()" required>
+            <option value="">নির্বাচন করুন</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <div id="transaction-details">
+            <label for="screenshot">পেমেন্টের স্ক্রিনশট আপলোড করুন:</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*">
+
+            <label for="transaction-number">লেনদেন নম্বর:</label>
+            <input type="text" id="transaction-number" name="transaction-number" placeholder="লেনদেন নম্বর লিখুন">
+
+            <label for="person-paid">কাকে পেমেন্ট করেছেন?</label>
+            <select id="person-paid" name="person-paid" onchange="togglePersonNameInput()" required>
+                <option value="">নির্বাচন করুন</option>
+                <option value="Fazayel">Fazayel</option>
+                <option value="Limon">Limon</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <div id="other-person-name">
+                <label for="other-name">ব্যক্তির নাম লিখুন:</label>
+                <input type="text" id="other-name" name="other-name" placeholder="নাম লিখুন">
+            </div>
+        </div>
+
+        <button type="submit">জমা দিন</button>
+    </form><br><p><h6>created by nihad fajayel<br><h6>your informetion is seecurd.do not give us any fals&violnt informataion</h6></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+</html>
